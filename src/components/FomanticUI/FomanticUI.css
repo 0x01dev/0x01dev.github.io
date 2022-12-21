@@ -1,0 +1,71 @@
+
+.yellow {
+    color: yellow;
+}
+
+.ui.menu {
+    margin-bottom: 0px !important;
+}
+
+.ui.inverted.root,
+.ui.inverted.container,
+.ui.inverted.form,
+.ui.inverted.segment {
+    background-color: #3c3f41 !important;
+}
+
+.ui.inverted.menu {
+    /*background-color: #2b2b2b !important;*/
+    background-color: #505050 !important;
+    /*background-color: green !important;*/
+}
+
+.ui.dark.menu {
+    background-color: #2b2b2b !important;
+    /*background-color: green !important;*/
+}
+
+.ui.inverted.toggle.checkbox label::before {
+    /* ! unchecked checkbox background */
+    background-color: grey !important;
+}
+
+.ui.inverted.toggle.checkbox input:focus:checked ~ label::before {
+    /* selected (focused) checked checkbox background */
+    /*background-color: darkred !important;*/
+}
+
+.ui.inverted.toggle.checkbox input:checked ~ .box:before,
+.ui.inverted.toggle.checkbox input:checked ~ label::before {
+    /* ! checked checkbox background */
+    /*background-color: greenyellow !important;*/
+}
+
+/*.ui.inverted.toggle.checkbox label::after {*/
+/*    !* ! checkbox button color *!*/
+/*    !*background-color: black !important;*!*/
+/*}*/
+
+select.ui.inverted,
+.ui.inverted.selection.dropdown,
+.ui.inverted.dropdown,
+.ui.inverted.form input:not([type]),
+.ui.inverted.form input[type=color],
+.ui.inverted.form input[type=date],
+.ui.inverted.form input[type=datetime-local],
+.ui.inverted.form input[type=email],
+.ui.inverted.form input[type=file],
+.ui.inverted.form input[type=month],
+.ui.inverted.form input[type=number],
+.ui.inverted.form input[type=password],
+.ui.inverted.form input[type=search],
+.ui.inverted.form input[type=tel],
+.ui.inverted.form input[type=text],
+.ui.inverted.form input[type=time],
+.ui.inverted.form input[type=url],
+.ui.inverted.form input[type=week] {
+    color: #f0f0f0 !important;
+    background-color: #505050 !important;
+    border-color: #505050 !important;
+}
+

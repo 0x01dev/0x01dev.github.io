@@ -1,0 +1,12 @@
+
+.Link {
+    font-weight: bold !important;
+}
+
+#HomePage {
+    padding: 1%;
+    background-color: lightgrey;
+    height: 100%;
+    font-size: 1.2rem;
+}
+

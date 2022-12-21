@@ -1,3 +1,8 @@
+### ------------
+
+github_push.sh
+!/.d.ts
+
 ### VisualStudioCode template
 .vscode/*
 !.vscode/settings.json
@@ -745,8 +750,4 @@ Temporary Items
 
 ### GPG template
 secring.*
-
-### ------------
-
-github_push.sh
 
