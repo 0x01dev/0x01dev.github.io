@@ -12,11 +12,24 @@ import rangeParser from 'parse-numeric-range';
 // https://github.com/react-syntax-highlighter/react-syntax-highlighter#light-build
 import {PrismLight as SyntaxHighlighter} from 'react-syntax-highlighter';
 import shell from 'react-syntax-highlighter/dist/esm/languages/prism/shell-session';
+import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
+import javascript from 'react-syntax-highlighter/dist/esm/languages/prism/javascript';
 // themes
-import {oneLight, oneDark, dark, darcula} from "react-syntax-highlighter/dist/esm/styles/prism";
+import {
+    oneLight,
+    oneDark,
+    dark,
+    darcula,
+    ghcolors,
+    prism,
+    materialDark,
+    materialLight
+} from "react-syntax-highlighter/dist/esm/styles/prism";
 
 SyntaxHighlighter.registerLanguage('shell', shell);
-
+SyntaxHighlighter.registerLanguage('jsx', jsx);
+SyntaxHighlighter.registerLanguage('js', javascript);
+SyntaxHighlighter.registerLanguage('javascript', javascript);
 
 /*
 * Syntax Highlight Code in Markdown
@@ -33,7 +46,7 @@ type ShowMarkdownProps = {
 
 const ShowMarkdown: React.FC<ShowMarkdownProps> = (props) => {
 
-    const syntaxTheme = oneLight; //
+    const [markdownCodeBlockTheme, setMarkdownCodeBlockTheme] = useState(darcula);
 
     const [markdownFile, setMarkdownFile] = useState<string>();
 
@@ -59,7 +72,7 @@ const ShowMarkdown: React.FC<ShowMarkdownProps> = (props) => {
             const match = /language-(\w+)/.exec(className || '')
             return !inline && match ? (
                 <SyntaxHighlighter
-                    style={syntaxTheme}
+                    style={markdownCodeBlockTheme}
                     language={match[1]}
                     PreTag="div"
                     children={String(children).replace(/\n$/, '')}
@@ -71,16 +84,17 @@ const ShowMarkdown: React.FC<ShowMarkdownProps> = (props) => {
         }
     };
 
+    const markdownBlock = markdownFile ?
+        <ReactMarkdown
+            children={markdownFile}
+            remarkPlugins={[remarkGfm]}
+            components={components}
+        />
+        : null;
+
     return (
         <>
-            {markdownFile ?
-                <ReactMarkdown
-                    children={markdownFile}
-                    remarkPlugins={[remarkGfm]}
-                    components={components}
-                />
-                : null
-            }
+            {markdownBlock}
         </>
     );
 }

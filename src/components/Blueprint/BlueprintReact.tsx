@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {
     Button,
     Card,
@@ -12,9 +12,10 @@ import {
     Switch,
     EditableText
 } from "@blueprintjs/core";
-import './BlueprintReact.css';
+
 import changeBodyBackgroundColor from "../../utilities/changeBodyBackgroundColor";
 import {NavLink} from "react-router-dom";
+import Cookies from "js-cookie";
 
 const BlueprintReact: React.FC = () => {
 
@@ -45,10 +46,27 @@ const BlueprintReact: React.FC = () => {
         }
     }
 
+    useEffect(() => {
+        const darkModeCookie = Cookies.get('darkMode');
+        if (darkModeCookie) {
+            if (darkModeCookie === 'true') {
+                console.log('darkModeCookie:', darkModeCookie);
+                setDarkModeHandler();
+            } else {
+                setLightModeHandler();
+            }
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            console.log('user browser prefers dark mode');
+            setDarkModeHandler();
+        } else {
+            setLightModeHandler();
+        }
+
+    }, [])
+
     // just mockup
     let disabled = false;
     let helperText = 'just some text';
-
 
     return (
         <div id={'blueprintRoot'} className={` ${(darkMode ? 'bp4-dark' : null)}  `}>

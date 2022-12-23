@@ -27,14 +27,14 @@ declare module '*.md' {
   const value: string; // markdown is just a string
   export default value;
 }
-">>./src/react-app-env.d.ts && cat ./src/react-app-env.d.ts
+" >>./src/react-app-env.d.ts && cat ./src/react-app-env.d.ts
 
 # Relative imports outside of src/ are not supported.
 # You can either move it inside src/, or add a symlink to it from project's node_modules/.
 mkdir -p ./node_modules/project-files/ && cd "$_" && npm init -y && cd - || exit
 ## you need to use full paths to create working symbolic link
 ## see: https://askubuntu.com/a/193683
-ln -sf  $(pwd)/README.md $(pwd)/node_modules/project-files/project_readme.md && cat ./node_modules/project-files/project_readme.md
+ln -sf $(pwd)/README.md $(pwd)/node_modules/project-files/project_readme.md && cat ./node_modules/project-files/project_readme.md
 
 # (*)
 # install axios
@@ -57,3 +57,7 @@ npm install countries-list
 ## https://blueprintjs.com/docs/#blueprint
 ## https://github.com/palantir/blueprint
 npm install --save-dev @blueprintjs/core @blueprintjs/icons @blueprintjs/select @blueprintjs/table @blueprintjs/timezone @blueprintjs/popover2 @blueprintjs/docs-theme
+
+# Font awesome for React
+# https://fontawesome.com/v6/docs/web/use-with/react/
+#npm install --save-dev @fortawesome/react-fontawesome @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/free-regular-svg-icons @fortawesome/free-brands-svg-icons
