@@ -52,3 +52,8 @@ npm install --save-dev js-cookie @types/js-cookie
 # countries list
 # https://github.com/annexare/Countries
 npm install countries-list
+
+## Blueprint
+## https://blueprintjs.com/docs/#blueprint
+## https://github.com/palantir/blueprint
+npm install --save-dev @blueprintjs/core @blueprintjs/icons @blueprintjs/select @blueprintjs/table @blueprintjs/timezone @blueprintjs/popover2 @blueprintjs/docs-theme

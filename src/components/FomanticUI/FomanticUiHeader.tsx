@@ -30,6 +30,10 @@ const FomanticUiHeader: React.FC<FomanticUiHeaderProps> = (props) => {
                     Semantic React
                 </NavLink>
 
+                <NavLink to='/blueprint-react' className="ui item">
+                    Blueprint React
+                </NavLink>
+
                 <NavLink to='/http-requests' className="ui item">
                     HTTP Requests
                 </NavLink>

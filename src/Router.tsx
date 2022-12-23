@@ -6,6 +6,7 @@ import FomanticUI from "./components/FomanticUI/FomanticUI";
 import HttpRequests from "./components/HttpRequests/HttpRequests";
 import SemanticReact from "./components/SemanticReact/SemanticReact";
 import TestLayout from "./components/FomanticUI/TestLayout";
+import BlueprintReact from "./components/Blueprint/BlueprintReact";
 
 const Router: React.FC = () => {
     return (
@@ -15,6 +16,7 @@ const Router: React.FC = () => {
                 <Route path={'/fomantic-ui'} element={<FomanticUI/>}/>
                 <Route path={'/fomantic-test-layout'} element={<TestLayout/>}/>
                 <Route path={'/semantic-ui-react'} element={<SemanticReact/>}/>
+                <Route path={'/blueprint-react'} element={<BlueprintReact/>}/>
                 <Route path={'/http-requests'} element={<HttpRequests/>}/>
             </Routes>
         </BrowserRouter>
