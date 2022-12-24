@@ -8,14 +8,17 @@ import Cookies, {CookieAttributes} from "js-cookie";
 import FomanticUiHeader from "./FomanticUiHeader";
 import FomanticUiLeftSidebar from "./FomanticUiLeftSidebar";
 import FomanticUiHome from "./FomanticUiHome";
+import changeBodyBackgroundColor from "../../utilities/changeBodyBackgroundColor";
 
 const FomanticUI: React.FC = (props) => {
 
     const [dark, setDark] = useState<boolean>(false);
 
-    useEffect(() => {
+    // const [bodyBackgroundColor, setBodyBackgroundColor] = useState('white')
+    // useEffect(() => {
+    //     changeBodyBackgroundColor(bodyBackgroundColor);
+    // }, [bodyBackgroundColor])
 
-    }, []);
 
     const toggleDarkMode = (value?: boolean) => {
         const cookieAttributes: CookieAttributes = {
@@ -32,8 +35,18 @@ const FomanticUI: React.FC = (props) => {
     };
 
     return (
-        <div className={`ui ${(dark ? 'inverted' : null)} root`} style={{height: '100%', width: `100%`}}>
+        <div
+            className={`ui ${(dark ? 'inverted' : 'light')} root`}
+            style={
+                {
+                    height: '100%',
+                    width: `100%`,
+                    // backgroundColor: 'green'
+                }
+            }>
+
             <FomanticUiHome dark={dark} toggleDarkMode={toggleDarkMode}/>
+
         </div>
 
         // <div className={`ui pushable`}>

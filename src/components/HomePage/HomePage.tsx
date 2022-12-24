@@ -1,32 +1,39 @@
 import React, {useEffect, useState} from "react";
 import {Link, NavLink} from "react-router-dom";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {
-    faCoffee,
-    faCode,
-    faFileCode
-} from '@fortawesome/free-solid-svg-icons'
+
 import './HomePage.css';
-import ShowMarkdown from "../ShowMarkdown";
 import changeBodyBackgroundColor from "../../utilities/changeBodyBackgroundColor";
 
-import homepage from './HomePage.md'
+import ShowMarkdown from "../Markdown/ShowMarkdown";
+import homepage from './HomePage.md';
+
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {
+    faFlask,
+    faFlaskVial,
+    faCaretRight,
+    faCaretLeft,
+    faCaretDown,
+    faCaretUp
+} from '@fortawesome/free-solid-svg-icons';
 
 const HomePage: React.FC = () => {
 
     const bodyBackgroundColor = '#BABABA';
-
     useEffect(() => {
         changeBodyBackgroundColor(bodyBackgroundColor);
     }, [])
+
+    const [showMarkdownExample, setShowMarkdownExample] = useState<boolean>(false);
+    const showMarkdownExampleClickHandler = () => {
+        setShowMarkdownExample(!showMarkdownExample);
+    }
 
     return (
         <div id={'HomePage'}>
 
             <h1>
-                <FontAwesomeIcon icon={faCoffee} size={"xs"}/>
-                <FontAwesomeIcon icon={faCode} size={"xs"}/>
-                {' '}
+                <FontAwesomeIcon icon={faFlask}/>{' '}
                 Front-end technologies studies
             </h1>
 
@@ -53,6 +60,12 @@ const HomePage: React.FC = () => {
                     Blueprint React
                 </Link>
             </div>
+            <div>
+
+                <Link to={'/fontawesome-icons'} className={'navLink'}>
+                    FontAwesome icons
+                </Link>
+            </div>
 
             <h2>Utilities</h2>
 
@@ -62,10 +75,23 @@ const HomePage: React.FC = () => {
                 HTTP requests
             </NavLink>
 
+            <h3>
+                Render Markdown: {' '}
+                <span
+                    onClick={showMarkdownExampleClickHandler}
+                    style={{cursor: 'pointer'}}
+                    title={showMarkdownExample ? 'Hide' : 'Show'}
+                >
+                    {showMarkdownExample ?
+                        <FontAwesomeIcon icon={faCaretDown}/> :
+                        <FontAwesomeIcon icon={faCaretRight}/>
+                    }
+                </span>
 
-            <h3>Render Markdown:</h3>
+            </h3>
 
-            <ShowMarkdown markdownFilePath={homepage}/>
+            {showMarkdownExample ? <ShowMarkdown markdownFilePath={homepage}/> : null}
+
             <br/>
             <br/>
             <br/>

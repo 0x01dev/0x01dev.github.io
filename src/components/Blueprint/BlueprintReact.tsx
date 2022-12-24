@@ -13,6 +13,7 @@ import {
     EditableText
 } from "@blueprintjs/core";
 
+import './BlueprintReact.css';
 import changeBodyBackgroundColor from "../../utilities/changeBodyBackgroundColor";
 import {NavLink} from "react-router-dom";
 import Cookies from "js-cookie";
@@ -20,7 +21,6 @@ import Cookies from "js-cookie";
 const BlueprintReact: React.FC = () => {
 
     const bodyBackgroundLightColor = '#F5F8FAD3';
-    // const bodyBackgroundDarkColor = '#475869FF';
     const bodyBackgroundDarkColor = '#31343c';
 
     const [darkMode, setDarkMode] = useState<boolean>();

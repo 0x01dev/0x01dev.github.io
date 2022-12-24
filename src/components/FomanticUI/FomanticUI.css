@@ -7,6 +7,10 @@
     margin-bottom: 0px !important;
 }
 
+.ui.root {
+    background-color: #fdfdfd !important;
+}
+
 .ui.inverted.root,
 .ui.inverted.container,
 .ui.inverted.form,
