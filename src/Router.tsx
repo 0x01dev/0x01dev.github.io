@@ -11,7 +11,10 @@ import FontAwesomeIcons from "./components/Icons/FontAwesomeIcons";
 
 const Router: React.FC = () => {
     return (
-        // <BrowserRouter> // is not supported by GitHub Pages
+        // <BrowserRouter>
+        // is not supported by GitHub Pages
+        // https://stackoverflow.com/questions/71984401/react-router-not-working-with-github-pages
+        // see https://reactrouter.com/en/main/router-components/hash-router
         <HashRouter>
             <Routes>
                 <Route path={'/'} element={<HomePage/>}/>
