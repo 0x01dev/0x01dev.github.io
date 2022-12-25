@@ -19,7 +19,11 @@ import {
 
 import Cookies, {CookieAttributes} from 'js-cookie';
 
+import chalk from 'chalk';
+
 const HomePage: React.FC = () => {
+
+    // console.log(chalk.blue.bold('<<<<< x >>>>>'));
 
     // test cookie
     const cookieAttributes: CookieAttributes = {
@@ -31,9 +35,14 @@ const HomePage: React.FC = () => {
     useEffect(() => {
         Cookies.set(
             'test cookie',
-            '00001',
+            '0001',
             {}
-        )
+        );
+        Cookies.set(
+            'testCookie',
+            '0002',
+            cookieAttributes
+        );
     }, [])
 
     const bodyBackgroundColor = '#e9e9e9';
