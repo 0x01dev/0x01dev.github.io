@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {BrowserRouter, HashRouter, Route, Routes} from 'react-router-dom';
 
 import HomePage from "./components/HomePage/HomePage";
 import FomanticUI from "./components/FomanticUI/FomanticUI";
@@ -11,7 +11,8 @@ import FontAwesomeIcons from "./components/Icons/FontAwesomeIcons";
 
 const Router: React.FC = () => {
     return (
-        <BrowserRouter>
+        // <BrowserRouter> // is not supported by GitHub Pages
+        <HashRouter>
             <Routes>
                 <Route path={'/'} element={<HomePage/>}/>
                 <Route path={'/fomantic-ui'} element={<FomanticUI/>}/>
@@ -21,7 +22,8 @@ const Router: React.FC = () => {
                 <Route path={'/fontawesome-icons'} element={<FontAwesomeIcons/>}/>
                 <Route path={'/http-requests'} element={<HttpRequests/>}/>
             </Routes>
-        </BrowserRouter>
+            {/*</BrowserRouter>*/}
+        </HashRouter>
     );
 }
 
