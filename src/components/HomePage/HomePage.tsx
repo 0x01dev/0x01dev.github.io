@@ -19,7 +19,7 @@ import {
 
 const HomePage: React.FC = () => {
 
-    const bodyBackgroundColor = '#BABABA';
+    const bodyBackgroundColor = '#e9e9e9';
     useEffect(() => {
         changeBodyBackgroundColor(bodyBackgroundColor);
     }, [])
@@ -90,7 +90,11 @@ const HomePage: React.FC = () => {
 
             </h3>
 
-            {showMarkdownExample ? <ShowMarkdown markdownFilePath={homepage}/> : null}
+            <div hidden={!showMarkdownExample}>
+                <ShowMarkdown markdownFilePath={homepage}/>
+            </div>
+
+            {/*{showMarkdownExample ? <ShowMarkdown markdownFilePath={homepage}/> : null}*/}
 
             <br/>
             <br/>
