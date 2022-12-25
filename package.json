@@ -2,6 +2,7 @@
   "name": "0x01dev.github.io",
   "homepage": "https://0x01dev.github.io",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "repository": {
     "type": "git",

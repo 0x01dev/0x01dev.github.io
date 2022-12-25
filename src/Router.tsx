@@ -15,6 +15,7 @@ const Router: React.FC = () => {
         // is not supported by GitHub Pages
         // https://stackoverflow.com/questions/71984401/react-router-not-working-with-github-pages
         // see https://reactrouter.com/en/main/router-components/hash-router
+        // Paths will be like <domain>/#/path
         <HashRouter>
             <Routes>
                 <Route path={'/'} element={<HomePage/>}/>
