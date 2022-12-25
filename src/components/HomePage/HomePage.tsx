@@ -17,11 +17,17 @@ import {
     faCaretUp
 } from '@fortawesome/free-solid-svg-icons';
 
-import Cookies from 'js-cookie';
+import Cookies, {CookieAttributes} from 'js-cookie';
 
 const HomePage: React.FC = () => {
 
     // test cookie
+    const cookieAttributes: CookieAttributes = {
+        path: '/', // A String indicating the path where the cookie is visible
+        // secure: true, // indicating if the cookie transmission requires a secure protocol (https)
+        sameSite: 'strict',
+        expires: 365, // days from creation, if omitted, the cookie becomes a session cookie
+    };
     useEffect(() => {
         Cookies.set(
             'test cookie',

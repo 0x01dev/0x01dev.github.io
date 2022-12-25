@@ -24,6 +24,7 @@ const FomanticUI: React.FC = (props) => {
         const cookieAttributes: CookieAttributes = {
             // secure: true
             sameSite: 'strict',
+            expires: 365, // days from creation, if omitted, the cookie becomes a session cookie
         };
         if (value) {
             setDark(value);
