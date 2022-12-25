@@ -17,7 +17,18 @@ import {
     faCaretUp
 } from '@fortawesome/free-solid-svg-icons';
 
+import Cookies from 'js-cookie';
+
 const HomePage: React.FC = () => {
+
+    // test cookie
+    useEffect(() => {
+        Cookies.set(
+            'test cookie',
+            '00001',
+            {}
+        )
+    }, [])
 
     const bodyBackgroundColor = '#e9e9e9';
     useEffect(() => {
